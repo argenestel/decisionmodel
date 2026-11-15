@@ -8,4 +8,11 @@ if not os.path.exists("the-verdict.txt"):
 
 with open("the-verdict.txt", "r", encoding="utf-8") as f:
     raw_text = f.read()
-    print(len(raw_text))
+    # print(len(raw_text))
+
+
+import tiktoken
+
+tokenizer = tiktoken.get_encoding("gpt2")
+enc_text = tokenizer.encode(raw_text)
+print(len(enc_text))
